@@ -34,7 +34,7 @@ RUN mkdir -p /koolproxy && cd /koolproxy && \
     chown -R daemon:daemon /koolproxy
 
 COPY init.sh /
-COPY chinadns.x86_64 /tmp/chinadns
+COPY chinadns /tmp/chinadns
 COPY ss-tproxy.conf v2ray.conf gfwlist.ext /sample_config/
 
 RUN chmod +x /init.sh && \
