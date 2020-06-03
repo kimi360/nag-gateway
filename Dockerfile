@@ -18,7 +18,7 @@ RUN mkdir -p /v2ray && \
 RUN cd / && mkdir -p /ss-tproxy &&\
     wget https://github.com/zfl9/ss-tproxy/archive/v4.6.zip && \
     unzip -jd ss-tproxy v4.6.zip && \
-    rm v3-master.zip && \
+    rm v4.6.zip && \
     sed -i 's/while umount \/etc\/resolv.conf; do :; done/while mount|grep overlay|grep \/etc\/resolv.conf; do umount \/etc\/resolv.conf; done/g' /ss-tproxy/ss-tproxy && \
     sed -i 's/60053/53/g' /ss-tproxy/ss-tproxy && \
     sed -i '/no-resolv/i\addn-hosts=$dnsmasq_addn_hosts' /ss-tproxy/ss-tproxy && \
